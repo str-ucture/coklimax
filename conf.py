@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Coklimax Notebooks'
-copyright = '2024, Shailesh Shrestha'
-author = 'Shailesh Shrestha'
+copyright = '2024, Shrestha'
+author = 'Shrestha'
 release = '0.1'
 
 # -- General configuration ---------------------------------------------------
