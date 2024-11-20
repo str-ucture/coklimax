@@ -1,7 +1,7 @@
 Welcome to CoKLIMAx Webpage!
 ============================
 
-This is a test webpage using made Sphinx and GitHub Pages.
+This is a test webpage made using Sphinx and GitHub Pages.
 
 Contents:
 
