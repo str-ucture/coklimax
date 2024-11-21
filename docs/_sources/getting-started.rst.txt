@@ -1,4 +1,4 @@
 Getting Started
 ===============
 
-This is a new section for your webpage. Additional contents can be added here.
+This section will help you set up your environment and run your first notebook.

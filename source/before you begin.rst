@@ -1,0 +1,4 @@
+Before you begin
+================
+
+This section will help you set up your environment and run your first notebook.
