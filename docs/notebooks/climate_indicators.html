@@ -6,11 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections &mdash; Coklimax 0.1.1 documentation</title>
+  <title>Climate Indicators &mdash; Coklimax 0.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -57,7 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="era5_land_hourly.html">ERA5-Land Hourly Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="era5_land_monthly.html">ERA5-Land Monthly Averaged</a></li>
 <li class="toctree-l1"><a class="reference internal" href="era5_land_monthly_use_case.html">ERA5-Land Monthly Averaged (Use case)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Climate Indicators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#festlegen-der-pfade-und-arbeitsverzeichnisse">Festlegen der Pfade und Arbeitsverzeichnisse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#a-datensatz-per-cds-api-herunterladen-und-entpacken-download-unpacking">A. Datensatz per CDS API herunterladen und entpacken [Download / Unpacking]</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#download-und-entpacken-der-daten">Download und Entpacken der Daten</a></li>
@@ -114,7 +114,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</li>
+      <li class="breadcrumb-item active">Climate Indicators</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/climate_indicators.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,8 +124,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="climate-indicators-for-europe-from-1940-to-2100-derived-from-reanalysis-and-climate-projections">
-<h1>Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections<a class="headerlink" href="#climate-indicators-for-europe-from-1940-to-2100-derived-from-reanalysis-and-climate-projections" title="Link to this heading"></a></h1>
+  <section id="climate-indicators">
+<h1>Climate Indicators<a class="headerlink" href="#climate-indicators" title="Link to this heading"></a></h1>
+<p><strong>Climate indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</strong></p>
 <p>Dieses Datenset enthält Klimadaten, die aus Reanalyse- und Modellsimulationen stammen und im Copernicus Climate Data Store (CDS) verfügbar sind. Es bietet Klimaindizes, die die Auswirkungen von Klimavariabilität und -wandel auf Sektoren wie Gesundheit, Landwirtschaft, Energie und Wasserwirtschaft beschreiben. Diese Indizes sind wichtig für die Anpassungsplanung auf europäischer und nationaler Ebene und wurden von der Europäischen Umweltagentur (EEA) entwickelt, um die Bedürfnisse nationaler Klimaanpassungsinitiativen in der EU zu erfüllen.</p>
 <p>Die Indizes basieren auf Daten aus verschiedenen CDS-Datensätzen und umfassen Temperatur-, Niederschlags- und Windindikatoren. Sie wurden aus den Datensätzen „Climate and energy indicators for Europe from 2005 to 2100“ und „ERA5 hourly data on single levels from 1940 to present“ berechnet. Weitere Indizes stammen aus thematischen Projekten des CDS.</p>
 <p>Von der neuen CDS-Seite (Beta)
@@ -155,7 +156,7 @@
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;C:\\Users\\timte\\Documents\\Python\\Climate Indicators\\01_mean_temperature-reanalysis-yearly-grid-1940-2023-v1.0.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;d7bd9ff3-7d51-4b68-a142-649801c366ba&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;C:\\Users\\timte\\Documents\\Python\\Climate Indicators\\01_mean_temperature-reanalysis-yearly-grid-1940-2023-v1.0.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;f5de56a5-b33d-47aa-aaa8-86c57315efc3&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -1278,6 +1279,9 @@ Indicator l6_fire_weather_index not found in mapping
 7: Latitude: 47.75, Longitude: 9.5
 8: Latitude: 48.0, Longitude: 9.0
 9: Latitude: 48.0, Longitude: 9.25
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wählen Sie eine Koordinate durch Eingabe der Nummer:  6
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ausgewählte Koordinate: Latitude: 47.75, Longitude: 9.25
@@ -4749,6 +4753,9 @@ FWI-Projektionen für Europa wurden auch im Rahmen des GFS-Projekts PESETA III e
 61: l6_fire_weather_index-reanalysis-yearly-grid-1979-2021-v1.0.nc
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wähle die Nummern der zu verarbeitenden Dateien aus (mit Komma getrennt) oder &#39;alle&#39; für alle Dateien:  11
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GeoTIFF für Jahr 1950 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate Indicators\Results\05_tropical_nights_projections_rcp_8_5_1950.tif&#39;
 GeoTIFF für Jahr 1951 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate Indicators\Results\05_tropical_nights_projections_rcp_8_5_1951.tif&#39;
 GeoTIFF für Jahr 1952 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate Indicators\Results\05_tropical_nights_projections_rcp_8_5_1952.tif&#39;
@@ -5134,6 +5141,9 @@ GeoTIFF für Jahr 2100 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate
 19: l6_fire_weather_index
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wähle die Nummer des Indikators aus:  5
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Verfügbare Dateien für &#39;06_hot_days&#39;:
 1: projections - 30deg - 06_hot_days-projections-yearly-30deg-rcp_4_5-cclm4_8_17-mpi_esm_lr-r1i1p1-grid-v1.0.nc
 2: projections - 30deg - 06_hot_days-projections-yearly-30deg-rcp_8_5-cclm4_8_17-mpi_esm_lr-r1i1p1-grid-v1.0.nc
@@ -5144,6 +5154,9 @@ GeoTIFF für Jahr 2100 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate
 7: reanalysis - historical - 06_hot_days-reanalysis-yearly-30deg-grid-1940-2023-v1.0.nc
 8: reanalysis - historical - 06_hot_days-reanalysis-yearly-35deg-grid-1940-2023-v1.0.nc
 9: reanalysis - historical - 06_hot_days-reanalysis-yearly-40deg-grid-1940-2023-v1.0.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wähle die Nummern der zu verarbeitenden Dateien aus (mit Komma getrennt) oder &#39;alle&#39; für alle Dateien:  1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GeoTIFF für Jahr 1950 gespeichert: &#39;C:\Users\timte\Documents\Python\Climate Indicators\Results\06_hot_days_30deg_projections_rcp_4_5_1950.tif&#39;
