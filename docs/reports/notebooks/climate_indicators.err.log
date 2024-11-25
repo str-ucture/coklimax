@@ -34,7 +34,7 @@ File [1;32mF:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\ve
 [1;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [0;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[1;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('C:\\Users\\timte\\Documents\\Python\\Climate Indicators\\01_mean_temperature-reanalysis-yearly-grid-1940-2023-v1.0.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'f5de56a5-b33d-47aa-aaa8-86c57315efc3']
+[1;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('C:\\Users\\timte\\Documents\\Python\\Climate Indicators\\01_mean_temperature-reanalysis-yearly-grid-1940-2023-v1.0.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '0faf98d5-4bd3-43d6-bca6-18895089209f']
 
 During handling of the above exception, another exception occurred:
 
