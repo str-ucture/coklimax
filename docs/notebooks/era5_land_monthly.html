@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections" href="climate_indicators.html" />
+    <link rel="next" title="ERA5-Land Monthly Averaged (Use case)" href="era5_land_monthly_use_case.html" />
     <link rel="prev" title="ERA5-Land Hourly Data" href="era5_land_hourly.html" /> 
 </head>
 
@@ -50,25 +50,30 @@
               <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../before_you_begin.html">Before you begin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks (CDS):</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="era5_land_hourly.html">ERA5-Land Hourly Data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ERA5-Land Monthly Averaged</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#import-dependencies">Import dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-necessary-libraries">Import Necessary Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#manage-working-directories">Manage Working Directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cds-api-key-and-authentication">CDS API key and authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">Create list of variables and variable group to dynamically select the variable group and variable to download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#define-download-request-parameters-to-download-the-desired-dataset">Define download request parameters to download the desired dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-list-of-variables">Create list of variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#define-request-parameters-for-download">Define request parameters for download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-bounding-box-extents-bbox-for-the-dataset">Define Bounding Box Extents (Bbox) for the Dataset</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-requests-for-use-case">Example requests for use case</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="era5_land_monthly_use_case.html">ERA5-Land Monthly Averaged (Use case)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="climate_indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks (Satellite Image):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sentinel2_downloader.html">Sentinel2 Satellite image downloader using.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senthub_downloader.html">SentinelHub Downloader:</a></li>
 </ul>
 
         </div>
@@ -97,16 +102,16 @@
              
   <section id="era5-land-monthly-averaged">
 <h1>ERA5-Land Monthly Averaged<a class="headerlink" href="#era5-land-monthly-averaged" title="Link to this heading"></a></h1>
+<p>ERA5-Land is a high-resolution reanalysis dataset that provides a consistent and detailed view of land variables over several decades, combining model data with atmospheric forcing from ERA5 to ensure accuracy. By correcting input variables for altitude differences and leveraging indirect observational influences, it offers enhanced precision for land surface applications like flood and drought forecasting. Despite some inherent uncertainties, ERA5-Land’s extensive temporal and spatial resolution makes it a valuable resource for decision-making and environmental analysis.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview">ERA5-Land Monthly Averaged</a></p></li>
 <li><p><a class="reference external" href="https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation">Documentation</a></p></li>
 </ul>
-<section id="import-dependencies">
-<h2>Import dependencies<a class="headerlink" href="#import-dependencies" title="Link to this heading"></a></h2>
+<section id="import-necessary-libraries">
+<h2>Import Necessary Libraries<a class="headerlink" href="#import-necessary-libraries" title="Link to this heading"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">cdsapi</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
@@ -121,9 +126,9 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The directories (if doesn&#39;t exist) will be created in the Data folder</span>
-<span class="n">download_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\Data\ERA5-land-monthly-means\Download&quot;</span>
-<span class="n">working_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\Data\ERA5-land-monthly-means\Working&quot;</span>
-<span class="n">output_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\Data\ERA5-land-monthly-means\Output&quot;</span>
+<span class="n">download_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly-means\download&quot;</span>
+<span class="n">working_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly-means\working&quot;</span>
+<span class="n">output_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly-means\output&quot;</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">working_folder</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">working_folder</span><span class="p">)</span>
@@ -150,20 +155,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:23,776 WARNING [2024-11-19T00:00:00] Issue with underlaying infrastructure is now solved. System should gradually recover. Please check updated status [here](https://status.ecmwf.int/)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:23,776 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:10,319 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:23,776 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:10,322 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:23,776 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:10,323 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:23,776 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the &quot;Show API request code&quot; tool on the dataset Download Form to check you are using the correct syntax for your API request.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:10,324 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the &quot;Show API request code&quot; tool on the dataset Download Form to check you are using the correct syntax for your API request.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CDS API Client initialized successfully!
@@ -191,8 +193,8 @@
 </div>
 </div>
 </section>
-<section id="create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">
-<h2>Create list of variables and variable group to dynamically select the variable group and variable to download<a class="headerlink" href="#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download" title="Link to this heading"></a></h2>
+<section id="create-list-of-variables">
+<h2>Create list of variables<a class="headerlink" href="#create-list-of-variables" title="Link to this heading"></a></h2>
 <p>The list of variables are available at <a class="reference external" href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview">ERA5-Land Monthly Averaged</a></p>
 <p><em>Please check and modify the predefined variable name if any issue arises with variable name.</em></p>
 <div class="cell docutils container">
@@ -278,8 +280,8 @@
 </div>
 </div>
 </section>
-<section id="define-download-request-parameters-to-download-the-desired-dataset">
-<h2>Define download request parameters to download the desired dataset<a class="headerlink" href="#define-download-request-parameters-to-download-the-desired-dataset" title="Link to this heading"></a></h2>
+<section id="define-request-parameters-for-download">
+<h2>Define request parameters for download<a class="headerlink" href="#define-request-parameters-for-download" title="Link to this heading"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_variable_group</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
@@ -295,7 +297,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1d439e32458b421a8c25b4d48b45dc6e"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a2ea95875f684dc295f0e2fc8c8dc47b"}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -303,7 +305,7 @@
 
 <span class="n">selected_variable</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
     <span class="n">options</span><span class="o">=</span><span class="n">current_variable_group</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="n">current_variable_group</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="n">current_variable_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
     <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Select the variable of interest&quot;</span><span class="p">,</span>
     <span class="n">style</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">description_width</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">),</span>
     <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;50%&#39;</span><span class="p">),</span>
@@ -314,15 +316,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c2a3e33ddaaf49d3ac1f9e6cbddfcd42"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b4d10bc9c5c947c1a378dbf697e7513f"}</script></div>
 </div>
+<section id="define-bounding-box-extents-bbox-for-the-dataset">
+<h3>Define Bounding Box Extents (Bbox) for the Dataset<a class="headerlink" href="#define-bounding-box-extents-bbox-for-the-dataset" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Modify the code below to manually set the desired bounding box values, or</p></li>
+<li><p>Use the interactive bounding box tool by visiting this <a class="reference external" href="https://str-ucture.github.io/bbox-extractor/">Bbox-extractor</a>, which allows you to easily generate and visualize the bounding box coordinates for your dataset.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the bounding box extents in CRS: WGS84 in this format [lat_max, lon_min, lat_min, lon_max]</span>
 <span class="c1"># Recommended precision is 0.1 because Horizontal resolution: 0.1° x 0.1°; Native resolution is 9 km.</span>
 
 <span class="n">bbox_wgs84_deutschland</span> <span class="o">=</span> <span class="p">[</span><span class="mf">56.0</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">47.2</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">]</span> <span class="c1"># Bouding box for Germany</span>
-<span class="n">bbox_wgs84_konstanz</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.00</span><span class="p">,</span> <span class="mf">47.60</span><span class="p">,</span> <span class="mf">9.30</span><span class="p">,</span> <span class="mf">47.80</span><span class="p">]</span> <span class="c1"># Bounding box for Konstanz, Germany</span>
+<span class="n">bbox_wgs84_konstanz</span> <span class="o">=</span> <span class="p">[</span><span class="mf">47.8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">47.6</span><span class="p">,</span> <span class="mf">9.3</span><span class="p">]</span> <span class="c1"># Bounding box for Konstanz, Germany</span>
 </pre></div>
 </div>
 </div>
@@ -343,26 +351,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "eeb103328d0c48c69c7d991368e34ec0"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "403b6b5ffde9402bb31249599a6073da"}</script></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_year</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span>
-    <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Select the year for downloading data:&quot;</span><span class="p">,</span>
-    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">style</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">description_width</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">),</span>
-    <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;50%&#39;</span><span class="p">),</span>
-<span class="p">)</span>
-
-<span class="n">selected_year</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "fb88b69cbc0f481e97f8f038483dead2"}</script></div>
-</div>
+</section>
 </section>
 <section id="define-request-parameters-and-download-the-dataset">
 <h2>Define request parameters and download the dataset<a class="headerlink" href="#define-request-parameters-and-download-the-dataset" title="Link to this heading"></a></h2>
@@ -393,10 +384,120 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:24,158 INFO Request ID is cfe74f91-e8f7-4db2-a505-68257bf5dd66
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:11,384 INFO Request ID is 2c137a97-2286-4c34-821f-c04a8487527b
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-21 14:37:24,257 INFO status has been updated to accepted
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 14:46:11,662 INFO status has been updated to accepted
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-requests-for-use-case">
+<h2>Example requests for use case<a class="headerlink" href="#example-requests-for-use-case" title="Link to this heading"></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # This request downloads year 1950 to 2024 data, monthly averaged at 00:00</span>
+<span class="c1"># # &quot;variable&quot;: [&quot;2m_temperature&quot;],</span>
+
+<span class="c1"># dataset = &quot;reanalysis-era5-land-monthly-means&quot;</span>
+<span class="c1"># dataset_filename = f&quot;{dataset}_2m_temperature_1950_2024.nc&quot;</span>
+<span class="c1"># dataset_filepath = os.path.join(download_folder,dataset_filename)</span>
+
+<span class="c1"># request = {</span>
+<span class="c1">#     &quot;product_type&quot;: [&quot;monthly_averaged_reanalysis&quot;],</span>
+<span class="c1">#     &quot;variable&quot;: [&quot;2m_temperature&quot;],</span>
+<span class="c1">#     &quot;year&quot;: [str(year) for year in range(1950,2024+1,1)],</span>
+<span class="c1">#     &quot;month&quot;: [str(month) for month in range(13)],</span>
+<span class="c1">#     &quot;time&quot;: [&quot;00:00&quot;],</span>
+<span class="c1">#     &quot;data_format&quot;: &quot;netcdf&quot;,</span>
+<span class="c1">#     &quot;download_format&quot;: &quot;unarchived&quot;,</span>
+<span class="c1">#     &quot;area&quot;: bbox_wgs84_konstanz</span>
+<span class="c1"># }</span>
+
+<span class="c1"># # Download the dataset with the defined request paremeters</span>
+<span class="c1"># # client.retrieve(dataset, request, dataset_filepath)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 12:49:42,658 INFO Request ID is af7ddf9b-38e7-4044-a785-09e998bf634c
+2024-11-25 12:49:42,887 INFO status has been updated to accepted
+2024-11-25 12:49:46,852 INFO status has been updated to running
+2024-11-25 12:54:05,236 INFO status has been updated to successful
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7deafc5c33d94c3ebe1bf2f2f1e130c7", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;.\\data\\era5-land-monthly-means\\download\\reanalysis-era5-land-monthly-means_2m_temperature_1950_2024.nc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This request downloads year 1950 to 2024 data, monthly averaged at 00:00</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="s2">&quot;reanalysis-era5-land-monthly-means&quot;</span>
+<span class="n">dataset_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dataset</span><span class="si">}</span><span class="s2">_snow_cover_1950_2024.nc&quot;</span>
+<span class="n">dataset_filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_folder</span><span class="p">,</span><span class="n">dataset_filename</span><span class="p">)</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;product_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;monthly_averaged_reanalysis&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;snow_cover&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span><span class="mi">2024</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)],</span>
+    <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">)],</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;00:00&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;data_format&quot;</span><span class="p">:</span> <span class="s2">&quot;netcdf&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;unarchived&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="n">bbox_wgs84_konstanz</span>
+<span class="p">}</span>
+
+<span class="c1"># Download the dataset with the defined request paremeters</span>
+<span class="n">client</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">dataset_filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 13:38:43,232 INFO Request ID is 759c9cf9-d1c3-4735-b83b-429c8964a698
+2024-11-25 13:38:43,303 INFO status has been updated to accepted
+2024-11-25 13:38:46,218 INFO status has been updated to running
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # This request downloads year 1950 to 2024 data, monthly averaged at 00:00</span>
+<span class="c1"># # for month January to March and November and December</span>
+
+<span class="c1"># dataset = &quot;reanalysis-era5-land-monthly-means&quot;</span>
+<span class="c1"># dataset_filename = f&quot;{dataset}_lake_ice_depth_1950_2024.nc&quot;</span>
+<span class="c1"># dataset_filepath = os.path.join(download_folder,dataset_filename)</span>
+
+<span class="c1"># request = {</span>
+<span class="c1">#     &quot;product_type&quot;: [&quot;monthly_averaged_reanalysis&quot;],</span>
+<span class="c1">#     &quot;variable&quot;: [&quot;lake_ice_depth&quot;],</span>
+<span class="c1">#     &quot;year&quot;: [str(year) for year in range(1950,2024+1,1)],</span>
+<span class="c1">#     &quot;month&quot;: [str(month) for month in range(13)],</span>
+<span class="c1">#     &quot;time&quot;: [&quot;00:00&quot;],</span>
+<span class="c1">#     &quot;data_format&quot;: &quot;netcdf&quot;,</span>
+<span class="c1">#     &quot;download_format&quot;: &quot;unarchived&quot;,</span>
+<span class="c1">#     &quot;area&quot;: bbox_wgs84_konstanz</span>
+<span class="c1"># }</span>
+
+<span class="c1"># # Download the dataset with the defined request paremeters</span>
+<span class="c1"># client.retrieve(dataset, request, dataset_filepath)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-25 13:00:42,348 INFO Request ID is 0b941e72-2d6d-423b-8d8b-3af51d4a2ccd
+2024-11-25 13:00:42,782 INFO status has been updated to accepted
+2024-11-25 13:00:50,016 INFO status has been updated to running
+2024-11-25 13:05:07,787 INFO status has been updated to successful
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4d6d319eee6d41469d8cf1b22890839c", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;.\\data\\era5-land-monthly-means\\download\\reanalysis-era5-land-monthly-means_lake_ice_depth_1950_2024.nc&#39;
 </pre></div>
 </div>
 </div>
@@ -409,7 +510,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="era5_land_hourly.html" class="btn btn-neutral float-left" title="ERA5-Land Hourly Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="climate_indicators.html" class="btn btn-neutral float-right" title="Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="era5_land_monthly_use_case.html" class="btn btn-neutral float-right" title="ERA5-Land Monthly Averaged (Use case)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

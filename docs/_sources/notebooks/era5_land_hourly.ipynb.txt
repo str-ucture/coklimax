@@ -6,6 +6,8 @@
    "source": [
     "# ERA5-Land Hourly Data\n",
     "\n",
+    "ERA5-Land is a high-resolution reanalysis dataset that provides a consistent and detailed view of land variables over several decades, combining model data with atmospheric forcing from ERA5 to ensure accuracy. By correcting input variables for altitude differences and leveraging indirect observational influences, it offers enhanced precision for land surface applications like flood and drought forecasting. Despite some inherent uncertainties, ERA5-Land's extensive temporal and spatial resolution makes it a valuable resource for decision-making and environmental analysis.\n",
+    "\n",
     "* [ERA5-Land Hourly Data](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview')\n",
     "* [Documentation](https://confluence.ecmwf.int/display/CKB/ERA5-Land%3A+data+documentation)"
    ]
@@ -14,29 +16,16 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Import dependencies"
+    "## Import Necessary Libraries"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "ename": "ModuleNotFoundError",
-     "evalue": "No module named 'source'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
-      "Cell \u001b[1;32mIn[2], line 6\u001b[0m\n\u001b[0;32m      3\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mipywidgets\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mwidgets\u001b[39;00m\n\u001b[0;32m      4\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01mdatetime\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m datetime\n\u001b[1;32m----> 6\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01msource\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mnotebooks\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcds_client_util\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m initialize_cds_client\n",
-      "\u001b[1;31mModuleNotFoundError\u001b[0m: No module named 'source'"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "import os\n",
-    "import cdsapi\n",
     "import ipywidgets as widgets\n",
     "from datetime import datetime\n",
     "\n",
@@ -57,9 +46,9 @@
    "outputs": [],
    "source": [
     "# The directories (if doesn't exist) will be created in the Data folder\n",
-    "download_folder = r\".\\Data\\ERA5-land-hourly-data\\Download\"\n",
-    "working_folder = r\".\\Data\\ERA5-land-hourly-data\\Working\"\n",
-    "output_folder = r\".\\Data\\ERA5-land-hourly-data\\Output\"\n",
+    "download_folder = r\".\\data\\era5-land-hourly-data\\download\"\n",
+    "working_folder = r\".\\data\\era5-land-hourly-data\\working\"\n",
+    "output_folder = r\".\\data\\era5-land-hourly-data\\output\"\n",
     "\n",
     "if not os.path.exists(working_folder):\n",
     "    os.makedirs(working_folder)\n",
@@ -80,19 +69,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Error: The .cdsapirc file was not found at ../secrets/.cdsapirc.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Use the function to initialize the client\n",
     "try:\n",
-    "    client = initialize_cds_client(\"../secrets/.cdsapirc\")\n",
+    "    client = initialize_cds_client(\"../secrets/cds_api\")\n",
     "    print(\"CDS API Client initialized successfully!\")\n",
     "except (FileNotFoundError, ValueError) as e:\n",
     "    print(f\"Error: {e}\")"
@@ -123,7 +104,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Create list of variables and variable group to dynamically select the variable group and variable to download\n",
+    "## Create list of variables\n",
     "\n",
     "The list of variables are available at [ERA5-Land Hourly](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download)\n",
     "\n",
@@ -217,7 +198,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Define download request parameters to download the desired dataset"
+    "## Define request parameters for download"
    ]
   },
   {
@@ -257,6 +238,16 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Define Bounding Box Extents (Bbox) for the Dataset\n",
+    "\n",
+    "- Modify the code below to manually set the desired bounding box values, or\n",
+    "- Use the interactive bounding box tool by visiting this [Bbox-extractor](https://str-ucture.github.io/bbox-extractor/), which allows you to easily generate and visualize the bounding box coordinates for your dataset."
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
@@ -266,7 +257,7 @@
     "# Recommended precision is 0.1 because Horizontal resolution: 0.1° x 0.1°; Native resolution is 9 km.\n",
     "\n",
     "bbox_wgs84_deutschland = [56.0, 5.8, 47.2, 15.0] # Bouding box for Germany\n",
-    "bbox_wgs84_konstanz = [9.00, 47.60, 9.30, 47.80] # Bounding box for Konstanz, Germany"
+    "bbox_wgs84_konstanz = [47.8, 9, 47.6, 9.3] # Bounding box for Konstanz, Germany"
    ]
   },
   {
@@ -327,6 +318,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## Tips on Updating the Request Parameters (`dict`)\n",
     "\n",
     "Here are some additional details and examples to help you customize the `request` dictionary:\n",
@@ -337,7 +335,7 @@
     "  - The `area` key is a geographic bounding box in `WGS84` coordinate reference system format.\n",
     "- **Formatting**: Always ensure date and time formats conform to the required structure (e.g., `year` as `\"YYYY\"`, `time` as `\"HH:MM\"`).\n",
     "\n",
-    "---\n",
+    "<hr style=\"border: none; border-top: 1px solid #ddd; margin: 20px 0;\">\n",
     "\n",
     "### Customizing Parameters:\n",
     "\n",

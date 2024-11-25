@@ -14,7 +14,7 @@ License
    :caption: Getting Started:
 
    before_you_begin
-   installation
+   quickstart
 
 .. toctree::
    :maxdepth: 0
@@ -22,13 +22,14 @@ License
 
    ./notebooks/era5_land_hourly.ipynb
    ./notebooks/era5_land_monthly.ipynb
+   ./notebooks/era5_land_monthly_use_case.ipynb
    ./notebooks/climate_indicators.ipynb 
 
 .. toctree::
    :maxdepth: 0
    :caption: Notebooks (Satellite Image):
 
-   ./notebooks/sentinel2_downloader.ipynb
+   ./notebooks/senthub_downloader.ipynb
 
 
 About

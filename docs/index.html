@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -49,17 +49,18 @@
               <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="before_you_begin.html">Before you begin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks (CDS):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_hourly.html">ERA5-Land Hourly Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly.html">ERA5-Land Monthly Averaged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html">ERA5-Land Monthly Averaged (Use case)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/climate_indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Notebooks (Satellite Image):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/sentinel2_downloader.html">Sentinel2 Satellite image downloader using.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/senthub_downloader.html">SentinelHub Downloader:</a></li>
 </ul>
 
         </div>
@@ -95,19 +96,30 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="before_you_begin.html">Before you begin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before_you_begin.html">Before you begin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="before_you_begin.html#what-is-climate-data-store-cds-data-downloader">What is Climate Data Store (CDS) Data Downloader?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="before_you_begin.html#prerequisites-for-a-better-experience">Prerequisites (For a better experience)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#step-1-download-the-notebooks">Step 1: Download the Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#step-2-set-up-the-python-environment">Step 2: Set Up the Python Environment</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Notebooks (CDS):</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_hourly.html">ERA5-Land Hourly Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#import-dependencies">Import dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#import-necessary-libraries">Import Necessary Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#manage-working-directories">Manage Working Directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#cds-api-key-and-authentication">CDS API key and authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">Create list of variables and variable group to dynamically select the variable group and variable to download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-download-request-parameters-to-download-the-desired-dataset">Define download request parameters to download the desired dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#create-list-of-variables">Create list of variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-request-parameters-for-download">Define request parameters for download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-bounding-box-extents-bbox-for-the-dataset">Define Bounding Box Extents (Bbox) for the Dataset</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#tips-on-updating-the-request-parameters-dict">Tips on Updating the Request Parameters (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#general-notes">General Notes:</a><ul>
@@ -127,12 +139,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly.html">ERA5-Land Monthly Averaged</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#import-dependencies">Import dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#import-necessary-libraries">Import Necessary Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#manage-working-directories">Manage Working Directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#cds-api-key-and-authentication">CDS API key and authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">Create list of variables and variable group to dynamically select the variable group and variable to download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-download-request-parameters-to-download-the-desired-dataset">Define download request parameters to download the desired dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#create-list-of-variables">Create list of variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-request-parameters-for-download">Define request parameters for download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-bounding-box-extents-bbox-for-the-dataset">Define Bounding Box Extents (Bbox) for the Dataset</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#example-requests-for-use-case">Example requests for use case</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html">ERA5-Land Monthly Averaged (Use case)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#import-necessary-libraries">Import Necessary Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#manage-working-directories">Manage Working Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#read-the-downloaded-dataset">Read the downloaded dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#variable-snow-cover">Variable: snow cover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#create-basic-single-plot">Create Basic Single Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#interpolate-to-higher-resolution">Interpolate to higher resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly_use_case.html#create-df">Create df</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/climate_indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a><ul>
@@ -177,12 +203,21 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Notebooks (Satellite Image):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/sentinel2_downloader.html">Sentinel2 Satellite image downloader using.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#api-and-authentication">API and Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#define-bounding-box-and-resolution">Define bounding box and resolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#satellite-image-download-and-visualization">Satellite image Download and Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#true-color">True color</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#all-bands">All bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/senthub_downloader.html">SentinelHub Downloader:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/senthub_downloader.html#import-necessary-libraries">Import Necessary Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/senthub_downloader.html#manage-working-directories">Manage Working Directories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/senthub_downloader.html#api-and-authentication">API and Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/senthub_downloader.html#define-parameters-for-download">Define parameters for download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/senthub_downloader.html#retrieve-available-dataset-from-shcatalog">Retrieve available dataset from SHcatalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/senthub_downloader.html#define-evaluation-scripts-for-access-and-download">Define Evaluation scripts for access and download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/senthub_downloader.html#plot-true-color-raster">Plot true color raster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/senthub_downloader.html#plot-using-leafmap">Plot using leafmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/senthub_downloader.html#plot-false-color">Plot false color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/senthub_downloader.html#plot-ndvi">Plot NDVI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
