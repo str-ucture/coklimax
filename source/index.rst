@@ -36,11 +36,3 @@ About
 -----
 
 Welcome to a test project! This webpage was created using Sphinx.
-
-Setup Virtual Environment
--------------------------
-
-.. code-block:: python
-
-   # Python Virtual Environment
-   python -m venv venv

@@ -461,7 +461,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 17,
    "metadata": {},
    "outputs": [
     {
@@ -470,8 +470,33 @@
      "text": [
       "2024-11-25 13:38:43,232 INFO Request ID is 759c9cf9-d1c3-4735-b83b-429c8964a698\n",
       "2024-11-25 13:38:43,303 INFO status has been updated to accepted\n",
-      "2024-11-25 13:38:46,218 INFO status has been updated to running\n"
+      "2024-11-25 13:38:46,218 INFO status has been updated to running\n",
+      "2024-11-25 13:43:07,971 INFO status has been updated to successful\n"
      ]
+    },
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "d8aeb4003fd74fc5a6f636b7db8508e5",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "e088925932516ca96805b10d7f94fae9.nc:   0%|          | 0.00/88.9k [00:00<?, ?B/s]"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'.\\\\data\\\\era5-land-monthly-means\\\\download\\\\reanalysis-era5-land-monthly-means_snow_cover_1950_2024_01_04.nc'"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
     }
    ],
    "source": [
