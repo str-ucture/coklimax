@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to CoKLIMAx II Webpage! &mdash; Coklimax Notebooks 0.1.1 documentation</title>
+  <title>Welcome to CoKLIMAx II Webpage! &mdash; Coklimax 0.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -24,7 +24,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Before you begin" href="before%20you%20begin.html" /> 
+    <link rel="next" title="Before you begin" href="before_you_begin.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +36,7 @@
           
           
           <a href="#" class="icon icon-home">
-            Coklimax Notebooks
+            Coklimax
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -48,13 +48,18 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="before%20you%20begin.html">Before you begin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before_you_begin.html">Before you begin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Notebooks:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Notebooks (CDS):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/ERA5_Land%20%28Hourly%20Data%29.html">ERA5-Land hourly data from 1950 to present</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/Climate%20Indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_hourly.html">ERA5-Land Hourly Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly.html">ERA5-Land Monthly Averaged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/climate_indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Notebooks (Satellite Image):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/sentinel2_downloader.html">Sentinel2 Satellite image downloader using.</a></li>
 </ul>
 
         </div>
@@ -63,7 +68,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Coklimax Notebooks</a>
+          <a href="#">Coklimax</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -90,15 +95,96 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="before%20you%20begin.html">Before you begin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before_you_begin.html">Before you begin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Notebooks:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Notebooks (CDS):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/ERA5_Land%20%28Hourly%20Data%29.html">ERA5-Land hourly data from 1950 to present</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebooks/Climate%20Indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_hourly.html">ERA5-Land Hourly Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#import-dependencies">Import dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#manage-working-directories">Manage Working Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#cds-api-key-and-authentication">CDS API key and authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">Create list of variables and variable group to dynamically select the variable group and variable to download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-download-request-parameters-to-download-the-desired-dataset">Define download request parameters to download the desired dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#tips-on-updating-the-request-parameters-dict">Tips on Updating the Request Parameters (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_hourly.html#general-notes">General Notes:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/era5_land_hourly.html#customizing-parameters">Customizing Parameters:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#variable-variable">1. Variable (<code class="docutils literal notranslate"><span class="pre">variable</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#year-year">2. Year (<code class="docutils literal notranslate"><span class="pre">year</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#month-month">3. Month (<code class="docutils literal notranslate"><span class="pre">month</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#day-day">4. Day (<code class="docutils literal notranslate"><span class="pre">day</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#time-time">5. Time (<code class="docutils literal notranslate"><span class="pre">time</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#data-format-data-format">6. Data Format (<code class="docutils literal notranslate"><span class="pre">data_format</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#download-format-download-format">7. Download Format (<code class="docutils literal notranslate"><span class="pre">download_format</span></code>):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/era5_land_hourly.html#area-area">8. Area (<code class="docutils literal notranslate"><span class="pre">area</span></code>):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/era5_land_monthly.html">ERA5-Land Monthly Averaged</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#import-dependencies">Import dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#manage-working-directories">Manage Working Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#cds-api-key-and-authentication">CDS API key and authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#create-list-of-variables-and-variable-group-to-dynamically-select-the-variable-group-and-variable-to-download">Create list of variables and variable group to dynamically select the variable group and variable to download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-download-request-parameters-to-download-the-desired-dataset">Define download request parameters to download the desired dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/era5_land_monthly.html#define-request-parameters-and-download-the-dataset">Define request parameters and download the dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/climate_indicators.html">Climate Indicators for Europe from 1940 to 2100 derived from reanalysis and climate projections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#festlegen-der-pfade-und-arbeitsverzeichnisse">Festlegen der Pfade und Arbeitsverzeichnisse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#a-datensatz-per-cds-api-herunterladen-und-entpacken-download-unpacking">A. Datensatz per CDS API herunterladen und entpacken [Download / Unpacking]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#download-und-entpacken-der-daten">Download und Entpacken der Daten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#dateigroszen">Dateigrößen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#b-netcdfs-in-csv-tabellen-exportieren-netcdf-csv">B. netCDFs in CSV-Tabellen exportieren [netCDF -&gt; CSV]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#netcdf-to-csv-conversion-script">NetCDF to CSV Conversion Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#nutzung">Nutzung</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#c-auswertungen-der-klimaindikatoren-fur-eine-area-of-interest-csv-plots-diagramme">C. Auswertungen der Klimaindikatoren für eine Area Of Interest [CSV -&gt; Plots/Diagramme]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#festlegen-der-aoi-und-erstellen-von-diagrammen">Festlegen der AOI und Erstellen von Diagrammen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#c-1-definieren-der-aoi">C.1 Definieren der AOI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/climate_indicators.html#c-2-darstellung-der-klimaindikatoren-anhand-diagrammen">C.2 Darstellung der Klimaindikatoren anhand Diagrammen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#tropennachte">05. Tropennächte</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#hitzetage-30c">06. Hitzetage (&gt; 30°C)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#warmster-drei-tage-zeitraum">07. Wärmster Drei-Tage-Zeitraum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#tage-einer-mit-hoher-utci">10. Tage einer mit hoher UTCI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#frosttage">11. Frosttage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#gesamtniederschlag">12. Gesamtniederschlag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#plot-heatwavedays-datensatz-hwd-liefert-genauere-daten">Plot: HeatwaveDays (Datensatz HWD liefert genauere Daten)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#maximaler-aufeinanderfolgender-funf-tage-niederschlag">13.Maximaler aufeinanderfolgender Fünf-Tage-Niederschlag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#extremnniederschlage-insgesamt">14. Extremnniederschläge insgesamt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#aufeinanderfolgende-trockentage">15 Aufeinanderfolgende Trockentage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#dauer-der-meteorologischen-durren">19. Dauer der meteorologischen Dürren</a></li>
+<li class="toctree-l4"><a class="reference internal" href="notebooks/climate_indicators.html#tage-mit-hoher-brandgefahr">22. Tage mit hoher Brandgefahr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#d-zeitreihen-als-geotiffs-netcdf-geotiff">D. Zeitreihen als geoTIFFs [netCDF -&gt; GeoTIFF]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#e-zeitreihen-als-gif-darstellen-unvollstandig-netcdf-gif">E. Zeitreihen als GIF darstellen (UNVOLLSTÄNDIG) [netCDF -&gt; Gif]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/climate_indicators.html#temp">Temp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Notebooks (Satellite Image):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/sentinel2_downloader.html">Sentinel2 Satellite image downloader using.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#api-and-authentication">API and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#define-bounding-box-and-resolution">Define bounding box and resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#satellite-image-download-and-visualization">Satellite image Download and Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#true-color">True color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sentinel2_downloader.html#all-bands">All bands</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -119,7 +205,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="before%20you%20begin.html" class="btn btn-neutral float-right" title="Before you begin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="before_you_begin.html" class="btn btn-neutral float-right" title="Before you begin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

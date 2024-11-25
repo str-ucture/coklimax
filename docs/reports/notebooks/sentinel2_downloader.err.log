@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\Shailesh\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 641, in run_until_complete
+    return future.result()
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+plot_image(
+    true_color_imgs[0],
+    factor=3.5 / 255,
+    clip_range=(0, 1),
+    figsize=(8,8)
+)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[10], line 1[0m
+[1;32m----> 1[0m [43mplot_image[49m(
+[0;32m      2[0m     true_color_imgs[[38;5;241m0[39m],
+[0;32m      3[0m     factor[38;5;241m=[39m[38;5;241m3.5[39m [38;5;241m/[39m [38;5;241m255[39m,
+[0;32m      4[0m     clip_range[38;5;241m=[39m([38;5;241m0[39m, [38;5;241m1[39m),
+[0;32m      5[0m     figsize[38;5;241m=[39m([38;5;241m8[39m,[38;5;241m8[39m)
+[0;32m      6[0m )
+
+[1;31mNameError[0m: name 'plot_image' is not defined
+

@@ -1,11 +1,11 @@
 import cdsapi
 
-def initialize_cds_client(cdsapirc_path="../Secrets/.cdsapirc"):
+def initialize_cds_client(cdsapirc_path="../secrets/.cdsapirc"):
     """
     Initialize the CDS API client using the .cdsapirc file.
     
     Args:
-        cdsapirc_path (str): Path to the .cdsapirc file. Defaults to '../Secrets/.cdsapirc'.
+        cdsapirc_path (str): Path to the .cdsapirc file. Defaults to '../secrets/.cdsapirc'.
     
     Returns:
         cdsapi.Client: An initialized CDS API client instance.
@@ -37,10 +37,3 @@ def initialize_cds_client(cdsapirc_path="../Secrets/.cdsapirc"):
     
     # Initialize and return the CDS API client
     return cdsapi.Client(url=api_url, key=api_key)
-
-# Example Usage
-try:
-    client = initialize_cds_client()
-    print("CDS API Client initialized successfully!")
-except (FileNotFoundError, ValueError) as e:
-    print(f"Error: {e}")

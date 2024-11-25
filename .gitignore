@@ -1,4 +1,5 @@
 venv/
 
-source/Secrets/
+source/secrets/
 **/.cdsapirc
+**/cds_api

@@ -13,15 +13,23 @@ License
    :maxdepth: 2
    :caption: Getting Started:
 
-   before you begin
+   before_you_begin
    installation
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Notebooks:
+   :maxdepth: 0
+   :caption: Notebooks (CDS):
 
-   ./Notebooks/ERA5_Land (Hourly Data).ipynb
-   ./Notebooks/Climate Indicators.ipynb 
+   ./notebooks/era5_land_hourly.ipynb
+   ./notebooks/era5_land_monthly.ipynb
+   ./notebooks/climate_indicators.ipynb 
+
+.. toctree::
+   :maxdepth: 0
+   :caption: Notebooks (Satellite Image):
+
+   ./notebooks/sentinel2_downloader.ipynb
+
 
 About
 -----

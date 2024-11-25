@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\Shailesh\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 641, in run_until_complete
+    return future.result()
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# This request downloads 1 year data: 12 months (365 days, 366 days for leap years) and 24 hour data for each day.
+# The total length of the downloaded dataset is 365*24=8760 and 366*24=8784 for leap year.
+# Exception: For year 1950, length of dataset = 8759
+
+dataset = "reanalysis-era5-land"
+dataset_filename = f"{dataset}_{selected_variable.value}_{selected_year.value}.nc"
+dataset_filepath = os.path.join(download_folder,dataset_filename)
+
+request = {
+    "variable": selected_variable.value,
+    "year": selected_year.value,
+    "month": [str(month) for month in range(13)],
+    "day": [str(day) for day in range(32)],
+    "time": [f"{hour:02d}:00" for hour in range(24)],
+    "data_format": "netcdf",
+    "download_format": "unarchived",
+    "area": bbox_wgs84_konstanz
+}
+
+# Download the dataset with the defined request paremeters
+client.retrieve(dataset, request, dataset_filepath)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[10], line 21[0m
+[0;32m      9[0m request [38;5;241m=[39m {
+[0;32m     10[0m     [38;5;124m"[39m[38;5;124mvariable[39m[38;5;124m"[39m: selected_variable[38;5;241m.[39mvalue,
+[0;32m     11[0m     [38;5;124m"[39m[38;5;124myear[39m[38;5;124m"[39m: selected_year[38;5;241m.[39mvalue,
+[1;32m   (...)[0m
+[0;32m     17[0m     [38;5;124m"[39m[38;5;124marea[39m[38;5;124m"[39m: bbox_wgs84_konstanz
+[0;32m     18[0m }
+[0;32m     20[0m [38;5;66;03m# Download the dataset with the defined request paremeters[39;00m
+[1;32m---> 21[0m [43mclient[49m[38;5;241m.[39mretrieve(dataset, request, dataset_filepath)
+
+[1;31mNameError[0m: name 'client' is not defined
+
