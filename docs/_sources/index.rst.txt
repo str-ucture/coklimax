@@ -17,7 +17,7 @@ License
    quickstart
 
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 2
    :caption: Notebooks (CDS):
 
    ./notebooks/era5_land_hourly.ipynb
@@ -26,7 +26,7 @@ License
    ./notebooks/climate_indicators.ipynb 
 
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 2
    :caption: Notebooks (Satellite Image):
 
    ./notebooks/senthub_downloader.ipynb
