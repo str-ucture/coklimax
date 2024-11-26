@@ -8,4 +8,4 @@ Setup
    :caption: Subsections:
 
    ./rst_intro/os/notwendige_software_und_kenntnisse_windows
-   ./rst_intro/quickstart
+   ./rst_intro/os/quickstart

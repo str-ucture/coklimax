@@ -42,6 +42,14 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Copy images directories from source to build directory
+for /d %%I in ("%SOURCEDIR%\*") do (
+    if exist "%%I\images" (
+        echo Copying images from %%~nxI...
+        xcopy /E /I /Y "%%I\images" "%BUILDDIR%\%%~nxI\images"
+    )
+)
+
 REM Create .nojekyll file inside the build directory to disable Jekyll processing on GitHub Pages
 echo. > %BUILDDIR%\.nojekyll
 
