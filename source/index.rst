@@ -17,6 +17,7 @@ Welcome to the official documentation for CoKLIMAx II. Here you'll find everythi
   :caption: Kurs 1:
 
   ./notebooks/kurs1/herunterladen_ersten_datensatzes
+  ./notebooks/kurs1/analysis_and_visualization
 
 Before you begin
 ----------------
