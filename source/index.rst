@@ -1,38 +1,31 @@
-Welcome to CoKLIMAx II Webpage!
-===============================
+Welcome to CoKLIMAx II
+======================
 
 Welcome to the official documentation for CoKLIMAx II. Here you'll find everything you need to get started, explore features, and dive deep into functionalities.
 
-License
--------
+.. toctree::
+  :maxdepth: 2
+  :caption: Erste Schritte:
 
-**Licence to be determined.**
-
+  ./rst_intro/einführung_cds
+  ./rst_intro/einführung_jupyter_notebooks
+  ./rst_intro/einführung_kurz_elemente
+  ./rst_intro/notwendige_software_und_kenntnisse
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Getting Started:
+  :maxdepth: 2
+  :caption: Kurs 1:
 
-   before_you_begin
-   quickstart
+  ./notebooks/kurs1/herunterladen_ersten_datensatzes
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Notebooks (CDS):
+Before you begin
+----------------
 
-   ./notebooks/era5_land_hourly.ipynb
-   ./notebooks/era5_land_monthly.ipynb
-   ./notebooks/era5_land_monthly_use_case.ipynb
-   ./notebooks/climate_indicators.ipynb 
+Prerequisites (For a better experience)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Notebooks (Satellite Image):
-
-   ./notebooks/senthub_downloader.ipynb
-
-
-About
------
-
-Welcome to a test project! This webpage was created using Sphinx.
+- **Python 3.7 or higher**. (`Python 3.10 <https://www.python.org/downloads/release/python-31015/>`_ is recommended)
+- An **Integrated Development Environment (IDE)**. (e.g., `Visual Studio Code <https://code.visualstudio.com/>`_)
+- **Jupyter Notebook** is installed and accessible within your IDE.
+- An active **CDS Account** with API credentials.
+    - If you don't have one, register at `CDS Registration Page <https://cds.climate.copernicus.eu/>`_.

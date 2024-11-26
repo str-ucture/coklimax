@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download your first dataset &mdash; Coklimax 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Erforderliche Software und Kenntnisse" href="../../rst_intro/notwendige_software_und_kenntnisse.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Coklimax
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Erste Schritte:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_intro/einf%C3%BChrung_cds.html">Der Copernicus Climate Data Store (CDS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_intro/einf%C3%BChrung_jupyter_notebooks.html">Einführung in die CoKLIMAx II Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_intro/einf%C3%BChrung_kurz_elemente.html">Einführung Kurz Elemente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_intro/notwendige_software_und_kenntnisse.html">Erforderliche Software und Kenntnisse</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kurs 1:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Download your first dataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-climate-indicator-europe-from-1940-to-2100">Dataset: Climate indicator Europe from 1940 to 2100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specifying-the-paths-and-working-directories">Specifying the paths and working directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-and-accessing-the-dataset">Downloading and accessing the dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#authentication">1. Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-request-definition">2. API Request Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-api-request-and-download">3. Execute API request and download</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Coklimax</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Download your first dataset</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/notebooks/kurs1/herunterladen_ersten_datensatzes.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="download-your-first-dataset">
+<h1>Download your first dataset<a class="headerlink" href="#download-your-first-dataset" title="Link to this heading"></a></h1>
+<p>ERA5-Land is a high-resolution reanalysis dataset that provides a consistent and detailed view of land variables over several decades, combining model data with atmospheric forcings from ERA5 to ensure accuracy. By correcting input variables for elevation differences and leveraging indirect observational forcings, it provides improved precision for land surface applications such as flood and drought forecasting. Despite some inherent uncertainties, ERA5-Land is a valuable resource for decision-making and environmental analysis due to its comprehensive temporal and spatial resolution.</p>
+<section id="dataset-climate-indicator-europe-from-1940-to-2100">
+<h2>Dataset: Climate indicator Europe from 1940 to 2100<a class="headerlink" href="#dataset-climate-indicator-europe-from-1940-to-2100" title="Link to this heading"></a></h2>
+<p>• Data source: <a class="reference external" href="https://cds.climate.copernicus.eu/datasets/sis-ecde-climate-indicators?tab=download">Climate Indicator Europe</a><br />
+• <a class="reference external" href="https://confluence.ecmwf.int/display/CKB/ECDE+indicators+catalogue+entry%3A+Product+User+Guide">Documentation</a></p>
+</section>
+<section id="specifying-the-paths-and-working-directories">
+<h2>Specifying the paths and working directories<a class="headerlink" href="#specifying-the-paths-and-working-directories" title="Link to this heading"></a></h2>
+<p>Specifying paths and working directories in Jupyter Notebook is essential for ensuring the notebook correctly accesses and saves files, enabling seamless data loading, script execution, and result storage. It eliminates confusion over file locations, reducing errors and making the code more portable and reproducible across different systems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="sd">&#39;&#39;&#39; ---- Hier die Verzeichnisse angeben ---- &#39;&#39;&#39;</span>
+
+<span class="n">download_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly\download&quot;</span>
+<span class="n">working_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly\working&quot;</span>
+<span class="n">output_folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.\data\era5-land-monthly\output&quot;</span>
+
+<span class="sd">&#39;&#39;&#39; ----- Ende der Eingaben ---- &#39;&#39;&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">working_folder</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">working_folder</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">download_folder</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">download_folder</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-and-accessing-the-dataset">
+<h2>Downloading and accessing the dataset<a class="headerlink" href="#downloading-and-accessing-the-dataset" title="Link to this heading"></a></h2>
+<p>This section outlines a process for downloading a test dataset from <strong>ERA5-Land Monthly Averaged</strong> Data. We’ll retrieve variables from the <strong>“Temperature”</strong> and <strong>“Wind, Pressure, and Precipitation”</strong> groups using the CDS API. The process involves two steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Authentication</strong>: Replace api_key with your Personal Access Token from the CDS website.</p></li>
+<li><p><strong>API Request Definition</strong>: Specify the dataset and variables on the CDS download page and include them in your API request.</p></li>
+<li><p><strong>Execute API request and download</strong>: Download the dataset based on the provided fields (parameters) for filtering the dataset.</p></li>
+</ol>
+<section id="authentication">
+<h3>1. Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cdsapi</span>
+
+<span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;fdae60fd-35d4-436f-825c-c63fedab94a4&quot;</span>
+<span class="n">api_url</span> <span class="o">=</span> <span class="s2">&quot;https://cds.climate.copernicus.eu/api&quot;</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">api_url</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-26 12:12:41,983 WARNING [2024-11-19T00:00:00] System is experiencing performance issues. Please check updated status [here](https://status.ecmwf.int/)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-26 12:12:41,985 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-26 12:12:41,986 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-26 12:12:41,986 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-26 12:12:41,988 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the &quot;Show API request code&quot; tool on the dataset Download Form to check you are using the correct syntax for your API request.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="api-request-definition">
+<h3>2. API Request Definition<a class="headerlink" href="#api-request-definition" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Open this <strong>link</strong> in your browser: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=download</p></li>
+</ol>
+<p><em>Make sure that you are logged with your <a class="reference external" href="https://cds.climate.copernicus.eu/">CDS</a> account</em></p>
+<ol class="arabic" start="2">
+<li><p><strong>Select request fields</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Product type</strong>: “Monthly averaged reanalysis”</p></li>
+<li><p><strong>Variable</strong>: “2m temperature”</p></li>
+</ol>
+<img src="./images/era5_land_monthly/01_product_type_and_variable.png" width="700" style="display: block; margin: 0 auto;">
+<ol class="arabic simple" start="3">
+<li><p><strong>Year</strong>: Click on “<span style="color:blue; text-decoration:underline;">Select all</span>”</p></li>
+<li><p><strong>Month</strong>: Click on “<span style="color:blue; text-decoration:underline;">Select all</span></p></li>
+<li><p><strong>Time</strong>: “00:00”</p></li>
+</ol>
+<img src="./images/era5_land_monthly/02_year_month_time.png" width="700" style="display: block; margin: 0 auto;">
+<ol class="arabic" start="6">
+<li><p><strong>Geographical area</strong>: Select “Sub-region extraction” and update the values as:</p>
+<div align="center">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Direction</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>North</p></td>
+<td><p>47.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>West</p></td>
+<td><p>9.0</p></td>
+</tr>
+<tr class="row-even"><td><p>East</p></td>
+<td><p>9.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>South</p></td>
+<td><p>47.6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
+<img src="./images/era5_land_monthly/03_geographical_area.png" width="700" style="display: block; margin: 0 auto;">
+<ol class="arabic simple" start="7">
+<li><p><strong>Data format</strong>: “NetCDF4 (Experimental)”</p></li>
+<li><p><strong>Download format</strong>: “Unarchieved (not zipped if single file)”</p></li>
+</ol>
+<p><em>Then accept the <strong>Terms of use</strong>.</em></p>
+<img src="./images/era5_land_monthly/04_data_format_download_format_terms_of_use.png" width="700" style="display: block; margin: 0 auto;">
+</li>
+<li><p>If you have done everything correctly in Step 2, the API request should look something like this.</p></li>
+</ol>
+<img src="./images/era5_land_monthly/05_api_request.png" width="700" style="display: block; margin: 0 auto;">
+<p>For the next step, you will only need the <strong>dataset</strong> and <strong>request</strong> from the API request code. Copy and past it in the next cell.</p>
+<p><strong><em>Important</em></strong>: Larget dataset means longer <em>Queue</em> time and longer processing duration. So, it is recommended to apply filters appropriately.</p>
+</section>
+<section id="execute-api-request-and-download">
+<h3>3. Execute API request and download<a class="headerlink" href="#execute-api-request-and-download" title="Link to this heading"></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataset = &quot;reanalysis-era5-land-monthly-means&quot;</span>
+<span class="c1"># request = {</span>
+<span class="c1">#     &quot;product_type&quot;: [&quot;monthly_averaged_reanalysis&quot;],</span>
+<span class="c1">#     &quot;variable&quot;: [&quot;2m_temperature&quot;],</span>
+<span class="c1">#     &quot;year&quot;: [</span>
+<span class="c1">#         &quot;1950&quot;, &quot;1951&quot;, &quot;1952&quot;,</span>
+<span class="c1">#         &quot;1953&quot;, &quot;1954&quot;, &quot;1955&quot;,</span>
+<span class="c1">#         &quot;1956&quot;, &quot;1957&quot;, &quot;1958&quot;,</span>
+<span class="c1">#         &quot;1959&quot;, &quot;1960&quot;, &quot;1961&quot;,</span>
+<span class="c1">#         &quot;1962&quot;, &quot;1963&quot;, &quot;1964&quot;,</span>
+<span class="c1">#         &quot;1965&quot;, &quot;1966&quot;, &quot;1967&quot;,</span>
+<span class="c1">#         &quot;1968&quot;, &quot;1969&quot;, &quot;1970&quot;,</span>
+<span class="c1">#         &quot;1971&quot;, &quot;1972&quot;, &quot;1973&quot;,</span>
+<span class="c1">#         &quot;1974&quot;, &quot;1975&quot;, &quot;1976&quot;,</span>
+<span class="c1">#         &quot;1977&quot;, &quot;1978&quot;, &quot;1979&quot;,</span>
+<span class="c1">#         &quot;1980&quot;, &quot;1981&quot;, &quot;1982&quot;,</span>
+<span class="c1">#         &quot;1983&quot;, &quot;1984&quot;, &quot;1985&quot;,</span>
+<span class="c1">#         &quot;1986&quot;, &quot;1987&quot;, &quot;1988&quot;,</span>
+<span class="c1">#         &quot;1989&quot;, &quot;1990&quot;, &quot;1991&quot;,</span>
+<span class="c1">#         &quot;1992&quot;, &quot;1993&quot;, &quot;1994&quot;,</span>
+<span class="c1">#         &quot;1995&quot;, &quot;1996&quot;, &quot;1997&quot;,</span>
+<span class="c1">#         &quot;1998&quot;, &quot;1999&quot;, &quot;2000&quot;,</span>
+<span class="c1">#         &quot;2001&quot;, &quot;2002&quot;, &quot;2003&quot;,</span>
+<span class="c1">#         &quot;2004&quot;, &quot;2005&quot;, &quot;2006&quot;,</span>
+<span class="c1">#         &quot;2007&quot;, &quot;2008&quot;, &quot;2009&quot;,</span>
+<span class="c1">#         &quot;2010&quot;, &quot;2011&quot;, &quot;2012&quot;,</span>
+<span class="c1">#         &quot;2013&quot;, &quot;2014&quot;, &quot;2015&quot;,</span>
+<span class="c1">#         &quot;2016&quot;, &quot;2017&quot;, &quot;2018&quot;,</span>
+<span class="c1">#         &quot;2019&quot;, &quot;2020&quot;, &quot;2021&quot;,</span>
+<span class="c1">#         &quot;2022&quot;, &quot;2023&quot;, &quot;2024&quot;</span>
+<span class="c1">#     ],</span>
+<span class="c1">#     &quot;month&quot;: [</span>
+<span class="c1">#         &quot;01&quot;, &quot;02&quot;, &quot;03&quot;,</span>
+<span class="c1">#         &quot;04&quot;, &quot;05&quot;, &quot;06&quot;,</span>
+<span class="c1">#         &quot;07&quot;, &quot;08&quot;, &quot;09&quot;,</span>
+<span class="c1">#         &quot;10&quot;, &quot;11&quot;, &quot;12&quot;</span>
+<span class="c1">#     ],</span>
+<span class="c1">#     &quot;time&quot;: [&quot;00:00&quot;],</span>
+<span class="c1">#     &quot;data_format&quot;: &quot;netcdf&quot;,</span>
+<span class="c1">#     &quot;download_format&quot;: &quot;unarchived&quot;,</span>
+<span class="c1">#     &quot;area&quot;: [47.8, 9, 47.6, 9.3]</span>
+<span class="c1"># }</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # This request downloads year 1950 to 2024 data, monthly averaged at 00:00</span>
+
+<span class="c1"># dataset_filename = f&quot;{dataset}_test_data.nc&quot;</span>
+<span class="c1"># dataset_filepath = os.path.join(download_folder,dataset_filename)</span>
+
+<span class="c1"># # Download the dataset with the defined request paremeters</span>
+<span class="c1"># client.retrieve(dataset, request, dataset_filepath)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the code is running, you can check the status of  API requests from <strong>Your requests</strong> at <a class="reference external" href="https://cds.climate.copernicus.eu/requests?tab=all">CDS request</a></p>
+<img src="./images/era5_land_monthly/06_your_requests.png" width="700" style="display: block; margin: 0 auto;"></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../rst_intro/notwendige_software_und_kenntnisse.html" class="btn btn-neutral float-left" title="Erforderliche Software und Kenntnisse" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Shrestha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -9,8 +9,8 @@
 project = 'Coklimax'
 copyright = '2024, Shrestha'
 author = 'Shrestha'
-release = '0.1.1'
-
+release = '1.0.0'
+ 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -18,11 +18,11 @@ extensions = [
     'sphinx_copybutton',
     'myst_nb',
     'nbsphinx',
+    # 'sphinx_intl'
 ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

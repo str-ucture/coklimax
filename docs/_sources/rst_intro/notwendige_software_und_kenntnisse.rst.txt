@@ -1,0 +1,11 @@
+Erforderliche Software und Kenntnisse
+=====================================
+
+Setup
+
+.. toctree::
+   :maxdepth: 0
+   :caption: Subsections:
+
+   ./rst_intro/os/notwendige_software_und_kenntnisse_windows
+   ./rst_intro/quickstart
