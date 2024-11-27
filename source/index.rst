@@ -11,6 +11,7 @@ Welcome to the official documentation for CoKLIMAx II. Here you'll find everythi
   ./rst_intro/einführung_jupyter_notebooks
   ./rst_intro/einführung_kurz_elemente
   ./rst_intro/notwendige_software_und_kenntnisse
+  ./notebooks/setup_verification
 
 .. toctree::
   :maxdepth: 2
@@ -18,6 +19,12 @@ Welcome to the official documentation for CoKLIMAx II. Here you'll find everythi
 
   ./notebooks/kurs1/herunterladen_ersten_datensatzes
   ./notebooks/kurs1/analysis_and_visualization
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Kurs 3:
+
+  ./notebooks/kurs3/senthub_downloader
 
 Before you begin
 ----------------

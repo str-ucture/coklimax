@@ -6,11 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Erforderliche Software und Kenntnisse &mdash; Coklimax 1.0.0 documentation</title>
+  <title>Required Software and Knowledge &mdash; Coklimax 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Download your first dataset" href="../notebooks/kurs1/herunterladen_ersten_datensatzes.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../notebooks/setup_verification.html" />
     <link rel="prev" title="Einführung Kurz Elemente" href="einf%C3%BChrung_kurz_elemente.html" /> 
 </head>
 
@@ -49,10 +49,15 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Erste Schritte:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="einf%C3%BChrung_cds.html">Der Copernicus Climate Data Store (CDS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einf%C3%BChrung_cds.html">The Copernicus Climate Data Store (CDS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="einf%C3%BChrung_jupyter_notebooks.html">Einführung in die CoKLIMAx II Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="einf%C3%BChrung_kurz_elemente.html">Einführung Kurz Elemente</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Erforderliche Software und Kenntnisse</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Required Software and Knowledge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-infrastructure-for-jupyter-notebooks-on-windows">Setting up the Infrastructure for Jupyter Notebooks on Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-python-and-pip">1. Installing Python and pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-a-python-environment">2. Setting Up a Python Environment</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -60,6 +65,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/kurs1/herunterladen_ersten_datensatzes.html">Download your first dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/kurs1/analysis_and_visualization.html">Use Case: Analysis and Visualization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Kurs 3:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/kurs3/senthub_downloader.html">SentinelHub Downloader:</a></li>
 </ul>
 
         </div>
@@ -76,7 +85,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Erforderliche Software und Kenntnisse</li>
+      <li class="breadcrumb-item active">Required Software and Knowledge</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/rst_intro/notwendige_software_und_kenntnisse.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,11 +95,85 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="erforderliche-software-und-kenntnisse">
-<h1>Erforderliche Software und Kenntnisse<a class="headerlink" href="#erforderliche-software-und-kenntnisse" title="Link to this heading"></a></h1>
-<p>Setup</p>
-<div class="toctree-wrapper compound">
+  <section id="required-software-and-knowledge">
+<h1>Required Software and Knowledge<a class="headerlink" href="#required-software-and-knowledge" title="Link to this heading"></a></h1>
+<p>Jupyter Notebooks are a powerful environment for interactive programming, data analysis, and visualization. To use Jupyter Notebooks on a Windows PC, you need the appropriate software infrastructure. The following guide outlines the necessary steps to prepare your computer and provides freely available resources to acquire basic knowledge before starting the courses.</p>
+<section id="setting-up-the-infrastructure-for-jupyter-notebooks-on-windows">
+<h2>Setting up the Infrastructure for Jupyter Notebooks on Windows<a class="headerlink" href="#setting-up-the-infrastructure-for-jupyter-notebooks-on-windows" title="Link to this heading"></a></h2>
+<p>During the course preparation, we will occasionally work with the Windows Command Prompt (CMD). CMD is a command-line environment that enables you to interact directly with your operating system using text commands. It allows you to start programs, manage files, and control system processes. CMD is especially useful for developers to perform installations or configure tools like Python and Jupyter.</p>
+<p>To open CMD, press the <strong>Windows key</strong>, type <code class="docutils literal notranslate"><span class="pre">cmd</span></code> in the search bar, and press <strong>Enter</strong>. For a complete reference of commands and syntax, consult the Microsoft documentation or type <code class="docutils literal notranslate"><span class="pre">help</span></code> in the CMD.</p>
+<section id="installing-python-and-pip">
+<h3>1. Installing Python and pip<a class="headerlink" href="#installing-python-and-pip" title="Link to this heading"></a></h3>
+<p>To begin, download Python from the official <a class="reference external" href="https://www.python.org/downloads/">Python Website</a> or the recommended version <a class="reference external" href="https://www.python.org/downloads/release/python-3100/">Python 3.10</a>. During installation, ensure that the <strong>Add Python to PATH</strong> option is checked.</p>
+<p>If Python is not automatically added to the <strong>PATH</strong>, you can configure it manually. The <strong>PATH</strong> is an environment variable that specifies where the operating system can find executables like Python. To manually add Python to the <strong>PATH</strong>, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>Start Menu</strong>, search for <strong>Edit Environment Variables</strong>, and open the settings.</p></li>
+<li><p>Click <strong>Environment Variables…</strong> at the bottom of the window.</p></li>
+<li><p>Under <strong>System Variables</strong> or <strong>User Variables</strong>, locate the <strong>Path</strong> variable and click <strong>Edit</strong>.</p></li>
+<li><dl class="simple">
+<dt>Add the following directories to the <strong>Path</strong>:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C:/Users/Username/AppData/Local/Programs/Python/Python310</span></code> <em>(for Python 3.10)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:/Users/Username/AppData/Local/Programs/Python/Python310/Scripts</span></code> <em>(for tools like pip)</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Confirm the changes and restart CMD for them to take effect.</p></li>
+</ol>
+<p>After completing these steps, you should be able to execute Python from CMD using the <code class="docutils literal notranslate"><span class="pre">python</span></code> or <code class="docutils literal notranslate"><span class="pre">python3</span></code> command. Verify the installation by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
 </div>
+</section>
+<section id="setting-up-a-python-environment">
+<h3>2. Setting Up a Python Environment<a class="headerlink" href="#setting-up-a-python-environment" title="Link to this heading"></a></h3>
+<p>There are multiple ways to set up a Python environment.</p>
+<p><strong>Option 1: Using resources from CoKLIMAx repository</strong></p>
+<p><strong>Step 1:</strong> Install <a class="reference external" href="https://git-scm.com/downloads/win">git</a> and clone the <strong>CoKLIMAx</strong> repository. Open CMD and navigate to the desired directory for creating a copy of the CoKLIMAx II notebooks.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/str-ucture/coklimax.git
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;./coklimax/source/notebooks&quot;</span>
+</pre></div>
+</div>
+<p><strong>Step 2:</strong> Download the required files: <cite>setup_env.bat</cite> and <cite>requirements.txt</cite>. Use the “Save link as” option to download these files from the repository:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/str-ucture/coklimax/main/make.bat">setup_env.bat</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/str-ucture/coklimax/main/requirements.txt">requirements.txt</a></p></li>
+</ul>
+<p>Ensure both files are in the same directory.</p>
+<p><strong>Step 3:</strong> Run the <cite>setup_env.bat</cite> file and provide any necessary permissions. If Python is correctly installed, the script will create a Python environment named <strong>cds_env</strong> in the current folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Verify that all steps are followed correctly to ensure the environment is successfully created.</p>
+</div>
+<p><strong>Option 2: Using Anaconda Distribution</strong></p>
+<p>If you prefer using Anaconda for managing your Python environment, follow these steps:</p>
+<ol class="arabic">
+<li><p><strong>Download and Install Anaconda</strong>:
+* Download the latest version of <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda</a> for Windows.
+* Follow the installation instructions and ensure you add Anaconda to the PATH (optional but recommended).</p></li>
+<li><p><strong>Create a New Environment</strong>:
+Open the Anaconda Prompt (search for “Anaconda Prompt” in the Start Menu) and run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>cds_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>cds_env
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install Required Packages</strong>:
+Navigate to the folder containing the <cite>requirements.txt</cite> file and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify the Environment</strong>:
+Check the installed packages and Python version to confirm the setup:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+pip<span class="w"> </span>list
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
 </section>
 
 
@@ -98,7 +181,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="einf%C3%BChrung_kurz_elemente.html" class="btn btn-neutral float-left" title="Einführung Kurz Elemente" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../notebooks/kurs1/herunterladen_ersten_datensatzes.html" class="btn btn-neutral float-right" title="Download your first dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../notebooks/setup_verification.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

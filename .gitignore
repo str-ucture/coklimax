@@ -1,4 +1,5 @@
 venv/
+cds_venv/
 
 source/secrets/
 **/.cdsapirc
