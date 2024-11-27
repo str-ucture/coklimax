@@ -62,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#read-variable-data-and-generate-basic-metadata">1. Read variable data and generate basic metadata</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-basic-plot">2. Create Basic Plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#now-lets-make-the-plot-a-bit-more-informative">Now, lets make the plot a bit more informative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-time-series-plot">3. Create time series plot</a></li>
 </ul>
 </li>
 </ul>
@@ -403,6 +404,205 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/8b841e206afb580947e82facfafa09a799bca42ed19319cb2c66444508f66afd.png" src="../../_images/8b841e206afb580947e82facfafa09a799bca42ed19319cb2c66444508f66afd.png" />
+</div>
+</div>
+</section>
+<section id="create-time-series-plot">
+<h3>3. Create time series plot<a class="headerlink" href="#create-time-series-plot" title="Link to this heading"></a></h3>
+<p>Create time series plot for August from year 1950 to 2024</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_values_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">median_values_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">total_bands</span> <span class="o">=</span> <span class="p">[(</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">variable_data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">band_index</span><span class="o">//</span><span class="mi">12</span><span class="p">)</span><span class="o">+</span><span class="mi">1950</span> <span class="k">for</span> <span class="n">band_index</span> <span class="ow">in</span> <span class="n">total_bands</span><span class="p">]</span>
+<span class="n">month_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">band_index</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">band_index</span> <span class="ow">in</span> <span class="n">total_bands</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">band_index</span> <span class="ow">in</span> <span class="n">total_bands</span><span class="p">:</span>
+    <span class="n">band_data</span> <span class="o">=</span> <span class="n">variable_data</span><span class="p">[</span><span class="n">band_index</span><span class="p">,:,:]</span><span class="o">-</span><span class="mf">273.15</span>
+    <span class="n">mean_values_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">band_data</span><span class="p">))</span>
+    <span class="n">median_values_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">band_data</span><span class="p">))</span>
+    
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">year_list</span><span class="p">,</span>
+    <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="n">month_list</span><span class="p">,</span>
+    <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="n">mean_values_list</span><span class="p">,</span>
+    <span class="s1">&#39;median&#39;</span><span class="p">:</span> <span class="n">median_values_list</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">df_statistics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_data</span><span class="p">)</span>
+<span class="n">df_statistics</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F:\OneDrive - str.ucture GmbH\General\CoKLIMAx (Phase 2)\coklimax\venv\lib\site-packages\numpy\_core\fromnumeric.py:870: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
+  a.partition(kth, axis=axis, kind=kind, order=order)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>mean</th>
+      <th>median</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1950</td>
+      <td>1</td>
+      <td>-1.677588</td>
+      <td>-1.677588</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1950</td>
+      <td>2</td>
+      <td>2.095921</td>
+      <td>2.076715</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1950</td>
+      <td>3</td>
+      <td>4.579808</td>
+      <td>4.523981</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1950</td>
+      <td>4</td>
+      <td>7.100448</td>
+      <td>7.199243</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1950</td>
+      <td>5</td>
+      <td>14.580113</td>
+      <td>14.644403</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>893</th>
+      <td>2024</td>
+      <td>6</td>
+      <td>17.800043</td>
+      <td>17.897211</td>
+    </tr>
+    <tr>
+      <th>894</th>
+      <td>2024</td>
+      <td>7</td>
+      <td>20.498244</td>
+      <td>20.623407</td>
+    </tr>
+    <tr>
+      <th>895</th>
+      <td>2024</td>
+      <td>8</td>
+      <td>21.534143</td>
+      <td>21.669397</td>
+    </tr>
+    <tr>
+      <th>896</th>
+      <td>2024</td>
+      <td>9</td>
+      <td>14.937870</td>
+      <td>15.007043</td>
+    </tr>
+    <tr>
+      <th>897</th>
+      <td>2024</td>
+      <td>10</td>
+      <td>12.011448</td>
+      <td>12.076227</td>
+    </tr>
+  </tbody>
+</table>
+<p>898 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
+
+<span class="n">selected_month</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># August</span>
+
+<span class="c1"># filter the df_statistics by month = 8 (August)</span>
+<span class="n">df_statistics_filtered</span> <span class="o">=</span> <span class="n">df_statistics</span><span class="p">[</span><span class="n">df_statistics</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">selected_month</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#f1f1f1&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1"># Titles and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Average&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#333333&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#555555&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Average&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#555555&#39;</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>    
+<span class="p">}</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># Grids and ticks</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#b0b0b0&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ticker</span><span class="o">.</span><span class="n">FormatStrFormatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%0.2f</span><span class="s1">&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#b0b0b0&#39;</span><span class="p">)</span>
+
+<span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span>
+                 <span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+                 <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ff6f61&#39;</span><span class="p">,</span>
+                 <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span>
+                 <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1"># # Add linear trend line</span>
+<span class="c1"># slope, intercept = np.polyfit(df_statistics_filtered[&#39;year&#39;], df_statistics_filtered[&#39;mean&#39;].astype(float), 1)</span>
+<span class="c1"># trend_line = np.poly1d([slope, intercept])</span>
+<span class="c1"># plt.plot(df_statistics_filtered[&#39;year&#39;], trend_line(df_statistics_filtered[&#39;year&#39;]), label=&#39;Trend Line&#39;, color=&#39;blue&#39;, linestyle=&#39;--&#39;, linewidth=2)</span>
+
+<span class="c1"># Create a curved fit (quadratic, degree 2)</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># You can adjust this value for different curve types (degree 2 is a quadratic fit)</span>
+<span class="n">coefficients</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">degree</span><span class="p">)</span>
+<span class="n">curve_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coefficients</span><span class="p">)</span>
+
+<span class="c1"># Plot the curved trend line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">df_statistics_filtered</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Curve Fit (Degree </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7c5ff56589677a41801997f8688b090080c6a0c378c0657e7d10dee1f46c9f9e.png" src="../../_images/7c5ff56589677a41801997f8688b090080c6a0c378c0657e7d10dee1f46c9f9e.png" />
 </div>
 </div>
 </section>
