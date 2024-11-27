@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Coklimax'
-copyright = '2024, Shrestha'
-author = 'Shrestha'
+copyright = '2024, str.ucture GmbH'
+author = 'str.ucture GmbH'
 release = '1.0.0'
  
 # -- General configuration ---------------------------------------------------

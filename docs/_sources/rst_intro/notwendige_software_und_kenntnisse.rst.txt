@@ -88,3 +88,8 @@ If you prefer using Anaconda for managing your Python environment, follow these 
 
        python --version
        pip list
+
+Setting up the Infrastructure for Jupyter Notebooks on MacOS/Linux
+------------------------------------------------------------------
+
+**Work in progress**
