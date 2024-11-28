@@ -96,7 +96,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import required modules</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">importlib</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
@@ -114,29 +113,22 @@
     <span class="n">setup_errors</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># Step 2: List of required libraries</span>
-<span class="n">required_libraries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span>
+<span class="n">required_libraries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;numpy&quot;</span><span class="p">,</span>
                       <span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
                       <span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
                       <span class="s2">&quot;leafmap&quot;</span><span class="p">,</span>
                       <span class="s2">&quot;netCDF4&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;rasterio&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;sentinelhub&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;scipy&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;itables&quot;</span><span class="p">,</span>
                       <span class="s2">&quot;cdsapi&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;folium&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;ipywidgets&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;sentinelhub&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;itables&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;rasterio&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;xarray&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;localtileserver&quot;</span><span class="p">,</span>
                       <span class="p">]</span>
 
 <span class="c1"># matplotlib numpy pandas geopandas leafmap netCDF4 cdsapi sentinelhub itables rasterio xarray localtileserver</span>
-
-<span class="c1"># pip install sphinx</span>
-<span class="c1"># pip install sphinx-copybutton</span>
-<span class="c1"># pip install myst-nb</span>
-<span class="c1"># pip install nbsphinx</span>
-<span class="c1"># pip install sphinx-rtd-theme</span>
-
+<span class="c1"># sphinx sphinx-copybutton myst-nb nbsphinx sphinx-rtd-theme</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. Checking required libraries...&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="n">required_libraries</span><span class="p">:</span>
@@ -166,7 +158,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">kernel</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">start</span> <span class="k">as</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">Environment</span> <span class="s1">&#39;venv (Python 3.10.0)&#39;</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">available</span><span class="o">.</span> <span class="n">Consider</span> <span class="n">selecting</span> <span class="n">another</span> <span class="n">kernel</span> <span class="ow">or</span> <span class="n">refreshing</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">Python</span> <span class="n">Environments</span><span class="o">.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Checking your setup...
+
+1. Checking Python version...
+✅ Python version is compatible.
+
+2. Checking required libraries...
+✅ matplotlib is installed.
+✅ numpy is installed.
+✅ pandas is installed.
+✅ geopandas is installed.
+✅ leafmap is installed.
+✅ netCDF4 is installed.
+✅ cdsapi is installed.
+✅ sentinelhub is installed.
+✅ itables is installed.
+✅ rasterio is installed.
+✅ xarray is installed.
+✅ localtileserver is installed.
+
+🎉 Congratulations! Your setup is complete. You can proceed to the course notebooks.
 </pre></div>
 </div>
 </div>
